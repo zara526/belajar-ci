@@ -30,4 +30,20 @@ class Welcome extends CI_Controller {
 	public function index3(){
 		$this->load->view('index3.php');
 	}
+
+	public function header_light(){
+		 $this->load->view('header.php');
+	}
+
+	public function sidebar_dark(){
+		$this->load->view('sidebar.php');
+	}
+
+	public function footer(){
+		$this->load->view('footer.php');
+	}
+
+	public function content(){
+		$this->load->view('content.php');
+	}
 }

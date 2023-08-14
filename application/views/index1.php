@@ -39,13 +39,13 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="<?php  echo base_url(); ?> /assets/#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="<?php  echo base_url('#'); ?> " role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php  echo base_url(); ?> /assets/index3.php" class="nav-link">Home</a>
+        <a href="<?php  echo base_url('welcome/index3'); ?>" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?php  echo base_url(); ?> /assets/#" class="nav-link">Contact</a>
+        <a href="<?php  echo base_url('#'); ?> " class="nav-link">Contact</a>
       </li>
     </ul>
 
@@ -53,7 +53,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="<?php  echo base_url(); ?> /assets/#" role="button">
+        <a class="nav-link" data-widget="navbar-search" href="<?php  echo base_url('#'); ?> " role="button">
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
@@ -75,12 +75,12 @@
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="<?php  echo base_url(); ?> /assets/#">
+        <a class="nav-link" data-toggle="dropdown" href="<?php  echo base_url('#'); ?> ">
           <i class="far fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="<?php  echo base_url('assets/#'); ?>" class="dropdown-item">
+          <a href="<?php  echo base_url('#'); ?>" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="<?php  echo base_url('assets/dist/img/orang2.jpg'); ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
@@ -96,10 +96,10 @@
             <!-- Message End -->
           </a>
           <div class="dropdown-divider"></div>
-          <a href="<?php  echo base_url('assets/#'); ?>" class="dropdown-item">
+          <a href="<?php  echo base_url('#'); ?>" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="<?php  echo base_url('assets/dist/img/user8-128x128.jpg'); ?>" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="<?php  echo base_url('assets/dist/img/orang5.jpg'); ?>" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -112,7 +112,7 @@
             <!-- Message End -->
           </a>
           <div class="dropdown-divider"></div>
-          <a href="<?php  echo base_url('assets/#'); ?>" class="dropdown-item">
+          <a href="<?php  echo base_url('#'); ?>" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="<?php  echo base_url('assets/dist/img/orang1.png'); ?>" alt="User Avatar" class="img-size-50 img-circle mr-3">
@@ -133,7 +133,7 @@
       </li>
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="<?php  echo base_url('assets/#'); ?>">
+        <a class="nav-link" data-toggle="dropdown" href="<?php  echo base_url('#'); ?>">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
         </a>
@@ -159,12 +159,12 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="<?php  echo base_url('assets/#'); ?>" role="button">
+        <a class="nav-link" data-widget="fullscreen" href="<?php  echo base_url('#'); ?>" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="<?php  echo base_url('assets/#'); ?>" role="button">
+        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="<?php  echo base_url('#'); ?>" role="button">
           <i class="fas fa-th-large"></i>
         </a>
       </li>
@@ -175,7 +175,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?php  echo base_url('application/views/index3.php'); ?>" class="brand-link">
+    <a href="<?php  echo base_url('welcome/index3'); ?>" class="brand-link">
       <img src="<?php  echo base_url('assets/dist/img/AdminLTELogo.png'); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Ayosh company</span>
     </a>
@@ -188,7 +188,7 @@
           <img src="<?php  echo base_url('assets/dist/img/Alwi.jpg'); ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php  echo base_url('assets/#'); ?>" class="d-block">Alwi Yoshida</a>
+          <a href="<?php  echo base_url('#'); ?>" class="d-block">Alwi Yoshida</a>
         </div>
       </div>
 
@@ -248,7 +248,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php  echo base_url('assets/#'); ?>" class="nav-link">
+            <a href="<?php  echo base_url('#'); ?>" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Layout Options
@@ -344,7 +344,7 @@
           </li>
           <li class="nav-item">
             <a href="<?php  echo base_url('assets/#'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+						<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-96a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm96 96a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
               <p>
                 UI Elements
                 <i class="fas fa-angle-left right"></i>
@@ -858,7 +858,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php  echo base_url('/assets/#'); ?>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?php  echo base_url('#'); ?>">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -1453,7 +1453,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="<?php  echo base_url('/assets/https://adminlte.io'); ?>">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2021 <a href="<?php  echo base_url('/assets/https://adminlte.io'); ?>">Zarawiicu_</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.2.0
