@@ -6,7 +6,7 @@
 		<title>AdminLTE 3 | Sidebar</title>
 
 		<!-- Google Font: Source Sans Pro -->
-		<link rel="stylesheet" href="<?php  echo base_url('assets/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'); ?>">
+		<link rel="stylesheet" href="<?php  echo base_url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'); ?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/fontawesome-free/css/all.min.css'); ?> ">
 		<!-- Ionicons -->
@@ -26,7 +26,7 @@
 		<!-- summernote -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/summernote/summernote-bs4.min.css'); ?> ">
 	</head>
-	<body>
+	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
 		  <!-- Main Sidebar Container -->
 		  <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -708,7 +708,6 @@
     <!-- sidebar close -->
   </aside>
 </div>
-
 <!-- jQuery -->
 <script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -745,3 +744,4 @@
 <script src="<?php  echo base_url('assets/dist/js/pages/dashboard.js'); ?> "></script>
 </body>
 </html>
+

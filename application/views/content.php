@@ -26,7 +26,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php  echo base_url('assets/plugins/summernote/summernote-bs4.min.css'); ?> ">
 	</head>
-	<body>
+	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
 		<!-- The Content Page -->
 		<!-- Content Wrapper. Contains page content -->
@@ -571,5 +571,5 @@
 <script src="<?php  echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php  echo base_url('assets/dist/js/pages/dashboard.js'); ?> "></script>
-	</body>
-</html> 
+</body>
+</html>
