@@ -25,10 +25,61 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php  echo base_url('assets/plugins/summernote/summernote-bs4.min.css'); ?> ">
 
+  <style>
+	
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 25px;
+    width: 430px;
+	border: double 10px #4f5962;
+    box-shadow: 0 0 10px rgba(255,255,255,.3);
+	
+}
+
+.container h1{
+    text-align: left;
+    color: #4f5962;
+    margin-bottom: 30px;
+}
+
+.container table td{
+	text-align: left;
+    color: #4f5962;
+}
+
+.container form input{
+    width: calc(100% - 5px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color:  #4f5962 ;
+    color: #fff;
+    font-size: 20px;
+}
+
+.btn-tambah{
+	width: 350px;
+			background-color: #4f5962;
+			border: none;
+			border-radius: 10px;
+			text-decoration: none;
+			color: white;
+			padding: 10px 14px;
+			text-align: center;
+			display: inline-block;
+			font-size: 13px;
+			margin: 4px 2px;
+			cursor: pointer;
+}
+
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <section class="content">
-      <div class="container-fluid">
+      <div class="container">
 		<h1>Halaman Add User</h1>
 		<form action="<?php echo base_url('welcome/tambahin') ?>" method="POST">
 		<table>
@@ -47,11 +98,11 @@
 				<td>:</td>
 				<td><input type="text" name="posisi"></td>
 			</tr>
-			<tr>
-				<td colspan="2"><button type="submit">Add User</button></td>
-			</tr>
-		</table>
-		</form>
+			</table>
+			
+				<button type="submit" class="btn-tambah">Add User</button>
+
+			</form>
 	</div>
 </section>
 
