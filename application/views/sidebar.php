@@ -63,7 +63,7 @@
 	  <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item menu-open">
+          <class="nav-item menu-open">
             <a href="<?php  echo base_url('assets/#'); ?>" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -73,21 +73,27 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index'); ?>" class="nav-link active">
+                <a href="<?php echo base_url('welcome/index'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index2'); ?>" class="nav-link">
+                <a href="<?php echo base_url('welcome/index2'); ?>" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index3'); ?>" class="nav-link">
+							<li class="nav-item">
+                <a href="<?php echo base_url('welcome/index3'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('welcome/table'); ?>" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Table User</p>
                 </a>
               </li>
             </ul>

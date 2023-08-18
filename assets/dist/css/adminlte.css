@@ -18388,6 +18388,11 @@ body.text-sm .control-sidebar {
   padding-left: 1rem;
 }
 
+.tabel-form{
+	display: flex;
+	
+}
+
 .dark-mode .nav-pills .nav-link {
   color: #ced4da;
 }
