@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -9,6 +9,7 @@ class Welcome extends CI_Controller {
 	}
 	public function index()
 	{
+		//$data['nama'] = $this->M_login->useraktif();
 		//$this->load->view('index1.php');
 		$this->load->view('header.php');
 		$this->load->view('sidebar.php');
@@ -55,7 +56,8 @@ class Welcome extends CI_Controller {
 		);
 
 		$this->M_user->insertUser($ArrInsert);
-		redirect(base_url(''));
+		$this->session->set_flashdata('status', 'Data berhasil ditambahkan');
+		redirect(base_url('welcome/table'));
 		
 		/* Untuk mengecek apakah sudah terkoneksi atau belum
 		Menampilkan data Array
@@ -75,11 +77,18 @@ class Welcome extends CI_Controller {
 		);
 
 		$this->M_user->updateUser($id, $ArrUpdate);
-		redirect(base_url(''));
+		$this->session->set_flashdata('status', 'Data berhasil diubah');
+		redirect(base_url('welcome/table'));
 	}
 
 	public function hapus($id){
 		$this->M_user->deleteUser($id);
-		redirect(base_url(''));
+		$this->session->set_flashdata('s_hapus', 'Data berhasil dihapus');
+		redirect(base_url('welcome/table'));
 	}
+
+	/*public function useraktif(){
+		$this->db->where('akun.nama', $this->session->userdata('nama'));
+		return $this->db->get('akun')->result();
+	}*/
 }

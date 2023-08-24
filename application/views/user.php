@@ -53,7 +53,18 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+	  <?php if($this->session->flashdata('status')):?>
+		<div class="alert alert-success">
+			<?= $this->session->flashdata('status');?>
+		</div>
+		<?php endif ?>
+		<?php if($this->session->flashdata('s_hapus')):?>
+		<div class="alert alert-danger">
+			<?= $this->session->flashdata('s_hapus');?>
+		</div>
+		<?php endif;?>
+
+		<div class="row mb-2">
           <div class="col-sm-6">
             <h1>Data User Ayosh Company</h1>
           </div>
@@ -98,6 +109,8 @@
 	  </div>
 	</section>
 </div>
+
+
 	<!-- jQuery -->
 <script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -132,6 +145,7 @@
 <script src="<?php  echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php  echo base_url('assets/dist/js/pages/dashboard.js'); ?> "></script>
+
 </body>
 </html>
 

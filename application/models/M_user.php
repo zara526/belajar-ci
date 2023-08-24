@@ -20,6 +20,7 @@ class M_user extends CI_Model{
 	function updateUser($id, $data){
 		$this->db->where('id', $id);
 		$this->db->update('user', $data);
+		return $this->db->affected_rows();
 	}
 
 	function deleteUser($id){

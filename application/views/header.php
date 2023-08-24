@@ -46,6 +46,12 @@
 			<li class="nav-item d-none d-sm-inline-block">
         		<a href="<?php  echo base_url('#'); ?> " class="nav-link">Contact</a>
      		</li>
+			 <li class="nav-item d-none d-sm-inline-block">
+				<a href="<?php  echo base_url('auth/login'); ?>" class="nav-link">Login</a>
+			</li>
+			 <li class="nav-item d-none d-sm-inline-block">
+				<a href="<?php  echo base_url('auth/logout'); ?>" class="nav-link">Logout</a>
+			</li>
 		</ul>
 
 		<!-- Right navbar links -->
@@ -170,6 +176,7 @@
 	</ul>
 		</nav>
 			</div>
+			
 
 <!-- jQuery -->
 <script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>

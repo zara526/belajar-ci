@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body {
+	font-family: 'Poppins', sans-serif;
+	transition: 3s;
+  }
+  
+  .login-container {
+	margin-top: 10%;
+	border: 1px solid #CCD1D1;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	max-width: 50%;
+  }
+  
+  .ads {
+	background-color: #3d2846;
+	padding-top: 35px;
+	text-align: center;
+	justify-content: center;
+  }
+  
+  .login-form h1 {
+	margin-top: 10%;
+	margin-left: 7%;
+  }
+  
+  #jl {
+	font-weight: 600;
+  }
+  
+  #jk {
+	font-weight: 100 !important;
+	font-size: 30px;
+  }
+  
+  .profile-img {
+	text-align: center;
+  }
+  
+  .profile-img img {
+	border-radius: 50%;
+  }
+  
+  .login-form {
+	padding: 15px;
+  }
+  
+  .login-form h3 {
+	font-weight: 600;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+  }
+  
+  .form-control {
+	font-size: 14px;
+  }
+
+  .btn{
+	background-color: #3d2846;
+	color: white;
+	cursor: pointer;
+  }
+  
+  .btn:hover{
+	background-color: white;
+	color: #3d2846;
+  }
+  small{
+	font-weight: 500;
+	text-decoration: none;
+	font-size: 14px;
+  }
+
+  small a{
+	font-weight: 600;
+	color: #3d2846;
+  }

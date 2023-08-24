@@ -31,6 +31,11 @@
 		<!-- The Content Page -->
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
+			<?php if($this->session->flashdata('info')):?>
+			<div class="alert alert-success">
+				<?= $this->session->flashdata('info');?>
+			</div>
+			<?php endif ?>
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
