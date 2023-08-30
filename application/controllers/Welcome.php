@@ -6,11 +6,11 @@ class Welcome extends MY_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('M_user');
+		$this->load->model('M_ajax');
 	}
 	public function index()
 	{
 		//$data['nama'] = $this->M_login->useraktif();
-		//$this->load->view('index1.php');
 		$this->load->view('header.php');
 		$this->load->view('sidebar.php');
 		$this->load->view('content.php');
@@ -22,7 +22,10 @@ class Welcome extends MY_Controller {
 	}
 
 	public function index3(){
-		$this->load->view('index3.php');
+		$this->load->view('header.php');
+		$this->load->view('sidebar.php');
+		$this->load->view('product.php');
+		$this->load->view('footer.php');
 	}
 
 	public function table(){
@@ -87,6 +90,59 @@ class Welcome extends MY_Controller {
 		redirect(base_url('welcome/table'));
 	}
 
+	public function tampilanProd(){
+		$querygetData = $this->M_ajax->TampilanProd();
+		$data = array('hasil' => $querygetData);
+		$this->load->view('product.php', $data);
+	}
+
+	public function tambah(){
+		$aksi = $this->input->POST('aksi');
+		$this->load->view('tambah.php', $aksi);
+	}
+
+	public function edit(){
+		$kode_prod = $this->load->POST('kode_prod');
+		$data['hasil'] = $this->M_ajax->Getkode($kode_prod);
+		$this->load->view('edit.php', $data);
+	}
+
+	public function hps(){
+		$kode_prod = $this->input->post($kode_prod);
+		$data['hasil'] = $this->M_ajax->Getkode($kode_prod);
+		$this->load->view('hapus.php', $data);
+	}
+
+	public function simpanprod(){
+		$kode_prod = $this->input->POST('kode_prod');
+		$name_prod = $this->input->POST('name_prod'); //yang dipanggil name-nya
+		$harga = $this->input->POST('harga');
+
+		$Arrtambah = array(
+			'kode_prod' => $kode_prod,
+			'name_prod' => $nama,
+			'harga' => $harga
+		);
+
+		$this->M_ajax>insertProd($Arrtammbah);
+	}
+
+	public function ubahprod(){
+		$kode_prod = $this->input->POST('kode_prod');
+		$name_prod = $this->input->POST('name_prod');
+		$harga = $this->input->POST('harga');
+
+		$ArrUpdate = array(
+			'name_prod' => $name_prod,
+			'harga' => $harga
+		);
+
+		$this->M_ajax->updateProd($id, $ArrUpdate);
+	}
+
+	public function hpsprod($kode_prod){
+		$this->M_ajax->deleteProd($kode_prod);
+	}
 	/*public function useraktif(){
 		$this->db->where('akun.nama', $this->session->userdata('nama'));
 		return $this->db->get('akun')->result();

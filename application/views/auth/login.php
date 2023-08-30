@@ -39,7 +39,7 @@
               <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Login</button>
+              <button type="submit" class="btn btn-lg btn-block" name="submit">Login</button>
             </div>
             <div class="form-group">
                 <small>Anda belum punya akun? <a href="register">Register</a></small>
