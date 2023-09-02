@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends MY_Controller {
 
 	public function __construct(){
-		parent::__construct();
+		parent::__construct(); 
+		if(!$this->session->userdata('user_login')) redirect('auth/login');
 		$this->load->model('M_user');
 		$this->load->model('M_ajax');
 	}
@@ -21,10 +22,11 @@ class Welcome extends MY_Controller {
 		$this->load->view('index-2.php');
 	}
 
-	public function index3(){
+	public function tampilanProd(){
 		$this->load->view('header.php');
 		$this->load->view('sidebar.php');
-		$this->load->view('product.php');
+		$data['hasil']= $this->M_ajax->TampilanProd();
+		$this->load->view('product.php', $data);
 		$this->load->view('footer.php');
 	}
 
@@ -90,58 +92,48 @@ class Welcome extends MY_Controller {
 		redirect(base_url('welcome/table'));
 	}
 
-	public function tampilanProd(){
-		$querygetData = $this->M_ajax->TampilanProd();
-		$data = array('hasil' => $querygetData);
-		$this->load->view('product.php', $data);
-	}
-
-	public function tambah(){
-		$aksi = $this->input->POST('aksi');
-		$this->load->view('tambah.php', $aksi);
-	}
-
-	public function edit(){
-		$kode_prod = $this->load->POST('kode_prod');
-		$data['hasil'] = $this->M_ajax->Getkode($kode_prod);
-		$this->load->view('edit.php', $data);
-	}
-
-	public function hps(){
-		$kode_prod = $this->input->post($kode_prod);
-		$data['hasil'] = $this->M_ajax->Getkode($kode_prod);
-		$this->load->view('hapus.php', $data);
-	}
-
 	public function simpanprod(){
-		$kode_prod = $this->input->POST('kode_prod');
-		$name_prod = $this->input->POST('name_prod'); //yang dipanggil name-nya
-		$harga = $this->input->POST('harga');
-
-		$Arrtambah = array(
-			'kode_prod' => $kode_prod,
-			'name_prod' => $nama,
-			'harga' => $harga
+		$data = array(
+			'kode_prod' => $this->input->POST('kode_prod'),
+			'name_prod' => $this->input->POST('name_prod'),
+			'harga' => $this->input->POST('harga')
 		);
 
-		$this->M_ajax>insertProd($Arrtammbah);
+		$insert =  $this->M_ajax->simpan_prod($data);
+		if($insert>0){
+			echo json_encode(["status" => 200,'message'=>'Berhasil Simpan Data.']);
+		 return;
+		} 
+		echo json_encode(["status" => 500,'message'=>'Gagal Simpan Data.']);
+
+	}
+
+	public function get_kodeprod(){
+		$kode_prod = $this->input->POST('kode_prod');
+		$data = $this->M_ajax->get_Kodeprod($kode_prod);
+		echo json_encode($data);
 	}
 
 	public function ubahprod(){
-		$kode_prod = $this->input->POST('kode_prod');
-		$name_prod = $this->input->POST('name_prod');
-		$harga = $this->input->POST('harga');
 
-		$ArrUpdate = array(
-			'name_prod' => $name_prod,
-			'harga' => $harga
+		$data = array(
+			'name_prod' => $this->input->POST('name_prod'),
+			'harga' => $this->input->POST('harga')
 		);
 
-		$this->M_ajax->updateProd($id, $ArrUpdate);
+		$kode_prod = $this->input->POST('kode_prod');
+		$update = $this->M_ajax->update_prod($data, $kode_prod);
+		if($update>0){
+			echo json_encode(["status" => 200,'message'=>'Berhasil Edit Data.']);
+		 return;
+		} 
+		echo json_encode(["status" => 500,'message'=>'Gagal Menyimpan Perubahan Data.']);
 	}
 
 	public function hpsprod($kode_prod){
-		$this->M_ajax->deleteProd($kode_prod);
+		$kode_prod = $this->input->post($kode_prod);
+		$delete = $this->M_ajax->hapus_prod($kode_prod);
+		echo json_encode(array("status" => $delete));
 	}
 	/*public function useraktif(){
 		$this->db->where('akun.nama', $this->session->userdata('nama'));

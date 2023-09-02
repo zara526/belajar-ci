@@ -44,7 +44,7 @@ class Auth extends MY_Controller {
 	}
 
 	public function logout(){
-		$this->session->sess_destroy();
+		$this->session->unset_userdata('user_login');
 		redirect(base_url(''));
 	}
  }

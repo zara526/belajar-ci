@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="<?php  echo base_url('')?>https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?php  echo base_url('')?>https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
 	<script src="<?= base_url('')?>https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="<?= base_url('')?>https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="<?= base_url('')?>https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="<?= base_url('')?>https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="<?= base_url('')?>https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
 	<style>
 		.btn-tambah, .btn-edit, .btn-hps{
@@ -56,10 +56,10 @@
 				<div class="col-12">
 					<div class="card">
 					<div class="card-body">
-						<a class="btn-tambah" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus-circle" style="padding: 5px;"></i>Tambah</a>
+						<a class="btn-tambah" id="btn-tambah" data-toggle="modal" data-target="#tambahModal"><i class="fa fa-plus-circle" style="padding: 5px;"></i>Tambah</a>
 					 <br>
 					<br>
-					<table border="1" id="example2" class="table table-bordered table-hover display nowrap">
+					<table border="1" id="mytable" class="table table-bordered table-hover display nowrap">
 						<thead>
 						<tr>
 							<td>No</td>
@@ -72,15 +72,15 @@
 						<tbody>
 						<?php 
 							$count = 1;
-							foreach($hasil as $item){ 
+							foreach($hasil as $row){ 
 								
 						?>
 						<tr>
 							<td><?php echo $count ?></td>
-							<td><?php echo $item->kode_prod ?></td>
-							<td><?php echo $item->name_prod ?></td>
-							<td><?php echo $item->harga ?></td>
-							<td><button type="button" kode_prod="<?= $item->kode_prod;?>" class="btn-edit">Edit</button> | <button tyep="button" kode_prod="<?= $item->kode_prod?>" class="btn-hps">Delete</button></td>
+							<td><?php echo $row->kode_prod ?></td>
+							<td><?php echo $row->name_prod ?></td>
+							<td><?php echo $row->harga ?></td>
+							<td><button  type="button" id="<?php echo $row->kode_prod;?>" data-toggle="modal" data-target="#editModal" class="btn-edit">Edit</button> | <button type="button" id="<?php echo $row->kode_prod?>" class="btn-hps">Delete</button></td>
 						</tr>
 						<?php 
 							$count++;
@@ -88,101 +88,108 @@
 						</tbody>
 					</table>
 			
-	<!-- Modal -->
+	<!-- Modal Tambah-->
 	<div class="modal fade" role="dialog" id="tambahModal" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<!--Modal Header -->
 							<div class="modal-header">
-								<h5 class="modal-title" id="judul"></h5>
+								<h5 class="modal-title"> Form Tambah Produk</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<!-- Modal Body -->
 							<div class="modal-body">
-								<div id="tampil_modal">
+							<form method="post" id="form-add">
+								<div class="form-group">
+									<label for="">Kode Produksi</label>	
+									<input type="text" name="kode_prod" id="kode_prod" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="">Nama</label>
+									<input type="text" id="name_prod" name="name_prod" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="">Harga</label>
+									<input type="number" id="harga" name="harga" class="form-control">
+								</div>						
+							</form>	
 									
-							
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-								
-							</div>
-						  </div>
+								<button id="simpan-btn" type="button" class="btn btn-primary">Add</button>
+						  	</div>
 						</div>
-					  </div>
 					</div>
-					</div>
-				</div>
-				</div>
-				</div>
-				</div>
 				</div>
 			</div>
-			</section>
+		 </div>
+	</div>
+
+	<!-- Modal Edit -->
+	<div class="modal fade" role="dialog" id="editModal" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<!--Modal Header -->
+							<div class="modal-header">
+								<h5 class="modal-title"> Form Edit Produk</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<!-- Modal Body -->
+							<di class="modal-body">
+							<form method="post" id="form-edit">
+								<div class="form-group">
+									<label for="">Kode Produksi</label>	
+									<input type="text" name="kode_prod" id="kode_prod" value="<?= $row->kode_prod; ?>" class="form-control" readonly>
+								</div>
+								<div class="form-group">
+									<label for="">Nama</label>
+									<input type="text" id="name_prod" name="name_prod" value="<?= $row->name_prod; ?>" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="">Harga</label>
+									<input type="number" id="harga" name="harga" value="<?= $row->harga; ?>" class="form-control">
+								</div>
+															
+							</form>		
+									
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+								<button id="save-edit" type="button" class="btn btn-primary">Update</button>
+						  	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		 </div>
+	</div>
+</div>
+	</div>
 		</div>
+			</div>
+			 </section>
+			</div>
 
 <!--Datatable Responsive -->
 <script src="<?= base_url('')?>https://cdn.datatables.net/rowreorder/1.4.1/js/dataTables.rowReorder.min.js"></script>
 <script src="<?= base_url('')?>https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 <!-- jQuery -->
 <script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url('')?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php  echo base_url('assets/dist/js/adminlte.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php  echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <script>
-	$(document).ready(function(){
-		$("#example2").DataTable();
-	});
+	var base_url = '<?= base_url()?>'
+	var kode = '<?php echo $row->kode_prod ?>'
 </script>
-<script>
-	$(document).ready(function(){
-		$('.tambah').click(function(){
-			var aksi = 'Tambah Produk';
-			$.ajax({
-				url: '<?= base_url(); ?>welcome/tambah',
-				method: 'post',
-				data: {aksi:aksi},
-				success: function(data){
-					$('#tambahModal').modal("show");
-					$('#tampil_mpdal').html(data);
-					document.getElementById("judul").innerHTML='Tambah Product';
-				}
-			});
-		});
+<script src="<?php  echo base_url('assets/js/product.js'); ?>"></script>
 
-		$('.edit').click(function(){
-			var kode_prod = $(this).attr("kode_prod");
-			$.ajax({
-				url: '<?= base_url(); ?>welcome/edit',
-				method: 'post',
-				data: {kode_prod:kode_prod},
-				success: function(data){
-					$('#tambahModal').modal("show");
-					$('#tampil_mpdal').html(data);
-					document.getElementById("judul").innerHTML='Edit Product';
-				}
-			});
-		});
-
-		$('.hps').click(function(){
-			var kode_prod = $(this).attr("kode_prod");
-			$.ajax({
-				url: '<?= base_url(); ?>welcome/hps',
-				method: 'post',
-				data: {kode_prod:kode_prod},
-				success: function(data){
-					$('#tambahModal').modal("show");
-					$('#tampil_mpdal').html(data);
-					document.getElementById("judul").innerHTML='Hapus Product';
-				}
-			});
-		});
-	})
-	
-	
-</script>
 </body>
 </html>

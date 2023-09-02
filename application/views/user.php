@@ -65,7 +65,7 @@
 					<a href="<?php echo base_url('welcome/add_user')?>" class="btn-tambah"><i class="fa fa-plus-circle" style="padding: 5px;"></i>Tambah</a>
 					<br>
 					<br>
-					<table border="1" id="example2" class="table table-bordered table-hover display nowrap">
+					<table border="1" id="mytable" class="table table-bordered table-hover display nowrap">
 						<tr>
 							<td>No</td>
 							<td>Id</td>

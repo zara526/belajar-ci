@@ -18,17 +18,17 @@
   </head>
   <body>
   <div class="container login-container" style="margin-top: 7%;">
-      <div class="row">
-	  <?php if($this->session->flashdata('suc')):?>
-		<div class="alert alert-success">
-			<?= $this->session->flashdata('suc');?>
-		</div>
-		<?php endif ?>
-		<?php if($this->session->flashdata('warn')):?>
-		<div class="alert alert-danger">
-			<?= $this->session->flashdata('warn');?>
-		</div>
-		<?php endif;?>
+		<?php if($this->session->flashdata('suc')):?>
+			<div class="alert alert-success">
+				<?= $this->session->flashdata('suc');?>
+			</div>
+			<?php endif ?>
+			<?php if($this->session->flashdata('warn')):?>
+			<div class="alert alert-danger">
+				<?= $this->session->flashdata('warn');?>
+			</div>
+			<?php endif;?>
+		<div class="row">
         <div class="col-md-6 ads">
 			<img src="<?php echo base_url('assets\dist\img\AdminLTELogo.png')?>" alt="profile_img" style="padding-top: 15px;" height="370px" width="250px;">
         </div>

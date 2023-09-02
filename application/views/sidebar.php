@@ -85,7 +85,7 @@
                 </a>
               </li>
 							<li class="nav-item">
-                <a href="<?php echo base_url('welcome/index3'); ?>" class="nav-link">
+                <a href="<?php echo base_url('welcome/tampilanProd'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
                 </a>

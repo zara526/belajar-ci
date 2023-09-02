@@ -7,13 +7,14 @@ class M_Login extends CI_Model{
 		$this->db->where('password', $password);
 		$query = $this->db->get('akun');
 		if ($query->num_rows()>0){
-			foreach ($query->result() as $row){
-				$cek = array (
-					'username'=> $row->username,
-					'password' => $row->password
-				);
-			}
-			$this->session->get_userdata($cek);
+			// foreach ($query->result() as $row){
+			// 	$cek = array (
+			// 		'username'=> $row->username,
+			// 		'password' => $row->password
+			// 	);
+			// }
+			$query = $this->db->get('akun')->row_array();
+			$this->session->set_userdata('user_login',$query);
 			$this->session->set_flashdata('info', 'Login berhasil');
 			redirect(base_url('welcome/index'));
 		}else{
