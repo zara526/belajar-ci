@@ -14,9 +14,7 @@
 	  		</footer>
 		</div>
 
-<!-- jQuery -->
-<script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 <!-- Datatables -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
@@ -46,12 +44,7 @@
 <script src="<?php  echo base_url('assets/plugins/summernote/summernote-bs4.min.js'); ?> "></script>
 <!-- overlayScrollbars -->
 <script src="<?php  echo base_url('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'); ?> "></script>
-<!-- AdminLTE App -->
-<script src="<?php  echo base_url('assets/dist/js/adminlte.js'); ?>"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php  echo base_url('assets/dist/js/demo.js'); ?>"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php  echo base_url('assets/dist/js/pages/dashboard.js'); ?> "></script>
+
 <script>
 	let table = new DataTable('#myTable');
 </script>

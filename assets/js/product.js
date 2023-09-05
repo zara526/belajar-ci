@@ -1,4 +1,4 @@
-var table,modal_edit=$('#editModal');
+var table, modal_edit=$('#editModal');
 $(document).ready(function(){
 	table=$("#mytable").DataTable();
 }); 
@@ -29,7 +29,7 @@ $(document).ready(function(){
 		});
 	});
 	 
-	var editModal = $('#editModal')
+	
 	$('.btn-edit').click(function(){
 		var kode_prod= $(this).attr('id');
 		$.ajax({
@@ -48,11 +48,11 @@ $(document).ready(function(){
 	});
 
 	$('#save-edit').click(function(){
-		var kode_prod= $('#kode_prod').val();
-		var name_prod= $('#name_prod').val();
-		var harga= $('#harga').val();
-		var url =base_url +'welcome/ubahprod'
-		var data ={ kode_prod: kode_prod, name_prod: name_prod, harga: harga};
+		var kode_prod = modal_edit.find('#kode_prod').val();
+		var name_prod = modal_edit.find('#name_prod').val();
+		var harga = modal_edit.find('#harga').val();
+		var url = base_url +'welcome/ubahprod';
+		var data = {kode_prod: kode_prod, name_prod: name_prod, harga: harga};
 		
 		$.ajax({
 			type: "POST",
@@ -60,6 +60,7 @@ $(document).ready(function(){
 			data: data,
 			dataType: "JSON",
 			success: function(response){
+				console.log(response)
 				if(response.status==200){
 					modal_edit.modal('hide');
 					location.reload();
@@ -69,26 +70,25 @@ $(document).ready(function(){
 			}
 		});
 	});
+});
 
-	$('.btn-hps').click(function(){
-		var kode_prod= $(this).data('kode_prod');
-		
-		if(confirm('Anda yakin ingin menghapus produk ini?')){
-		$.ajax({
-			type: "POST",
-			url: base_url+'welcome/hpsprod',
-			data: {kode_prod:kode_prod},
-			dataType: "JSON",
-			success: function(response){
-				if(response.status){
-					editModal.modal('hide');
-					location.reload();
-				}else{
-					alert("Gagal Menghapus Data!")
-				}
+function hpsprod(kode_prod){
+	console.log(kode_prod)
+	if(confirm('Anda yakin ingin menghapus produk ini?')){
+	$.ajax({
+		type: "POST",
+		url: base_url+'welcome/hpsprod',
+		data: {kode_prod:kode_prod},
+		dataType: "JSON",
+		success: function(response){
+			if(response.status){
+				
+				location.reload();
+			}else{
+				alert("Gagal Menghapus Data!")
 			}
-		});
-	  }
+		}
 	});
-})
+  }
+}
 

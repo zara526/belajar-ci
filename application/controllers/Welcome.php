@@ -115,14 +115,14 @@ class Welcome extends MY_Controller {
 	}
 
 	public function ubahprod(){
-
+		$kode_prod = $this->input->POST('kode_prod');
 		$data = array(
 			'name_prod' => $this->input->POST('name_prod'),
 			'harga' => $this->input->POST('harga')
 		);
 
-		$kode_prod = $this->input->POST('kode_prod');
-		$update = $this->M_ajax->update_prod($data, $kode_prod);
+		$this->M_ajax->update_prod($kode_prod, $data);
+		$update = $this->db->affected_rows();
 		if($update>0){
 			echo json_encode(["status" => 200,'message'=>'Berhasil Edit Data.']);
 		 return;
@@ -130,8 +130,8 @@ class Welcome extends MY_Controller {
 		echo json_encode(["status" => 500,'message'=>'Gagal Menyimpan Perubahan Data.']);
 	}
 
-	public function hpsprod($kode_prod){
-		$kode_prod = $this->input->post($kode_prod);
+	public function hpsprod(){
+		$kode_prod = $this->input->POST('kode_prod');
 		$delete = $this->M_ajax->hapus_prod($kode_prod);
 		echo json_encode(array("status" => $delete));
 	}

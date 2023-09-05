@@ -80,7 +80,7 @@
 							<td><?php echo $row->kode_prod ?></td>
 							<td><?php echo $row->name_prod ?></td>
 							<td><?php echo $row->harga ?></td>
-							<td><button  type="button" id="<?php echo $row->kode_prod;?>" data-toggle="modal" data-target="#editModal" class="btn-edit">Edit</button> | <button type="button" id="<?php echo $row->kode_prod?>" class="btn-hps">Delete</button></td>
+							<td><button  type="button" id="<?php echo $row->kode_prod;?>" data-toggle="modal" data-target="#editModal" class="btn-edit">Edit</button> | <button type="button" onclick="hpsprod('<?php echo $row->kode_prod?>')" class="btn-hps">Delete</button></td>
 						</tr>
 						<?php 
 							$count++;
