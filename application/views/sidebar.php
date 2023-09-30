@@ -6,7 +6,7 @@
 		<title>AdminLTE 3 | Sidebar</title>
 
 		<!-- Google Font: Source Sans Pro -->
-		<link rel="stylesheet" href="<?php  echo base_url('assets/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'); ?>">
+		<link rel="stylesheet" href="<?php  echo base_url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'); ?>">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/fontawesome-free/css/all.min.css'); ?> ">
 		<!-- Ionicons -->
@@ -26,7 +26,7 @@
 		<!-- summernote -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/summernote/summernote-bs4.min.css'); ?> ">
 	</head>
-	<body>
+	<body class="hold-transition sidebar-mini layout-fixed">
 		<div class="wrapper">
 		  <!-- Main Sidebar Container -->
 		  <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -63,7 +63,7 @@
 	  <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item menu-open">
+          <class="nav-item menu-open">
             <a href="<?php  echo base_url('assets/#'); ?>" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -73,21 +73,27 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index'); ?>" class="nav-link active">
+                <a href="<?php echo base_url('welcome/index'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index2'); ?>" class="nav-link">
+                <a href="<?php echo base_url('welcome/index2'); ?>" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php  echo base_url('welcome/index3'); ?>" class="nav-link">
+							<li class="nav-item">
+                <a href="<?php echo base_url('welcome/tampilanProd'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('welcome/table'); ?>" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Table User</p>
                 </a>
               </li>
             </ul>
@@ -708,7 +714,6 @@
     <!-- sidebar close -->
   </aside>
 </div>
-
 <!-- jQuery -->
 <script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -745,3 +750,4 @@
 <script src="<?php  echo base_url('assets/dist/js/pages/dashboard.js'); ?> "></script>
 </body>
 </html>
+
