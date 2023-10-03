@@ -70,7 +70,8 @@
 							<td>No</td>
 							<td>Id</td>
 							<td>Name</td>
-							<td>Position</td>
+							<td>Username</td>
+							<td>Password</td>
 							<td>Action</td>
 						</tr>
 						<?php 
@@ -82,7 +83,8 @@
 							<td><?php echo $count ?></td>
 							<td><?php echo $row->id ?></td>
 							<td><?php echo $row->name ?></td>
-							<td><?php echo $row->posisi ?></td>
+							<td><?php echo $row->username ?></td>
+							<td><?php echo $row->password ?></td>
 							<td><a href="<?php echo base_url('welcome/edit_user')?>/<?php echo $row->id ?>" class="btn-edit">Edit</a> | <a href="<?php echo base_url('welcome/hapus')?>/<?php echo $row->id ?>" class="btn-hps">Delete</a></td>
 						</tr>
 						<?php }?>

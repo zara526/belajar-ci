@@ -21,8 +21,8 @@ class Auth extends MY_Controller {
 			
 		$username = $this->input->POST('username');
 		$password = $this->input->POST('password');
-		$berhasil = $this->M_login->ambilogin($username, $password);
-		if( $berhasil == 1){
+		$user = $this->M_login->ambilogin($username);
+		if( $user && $user->password === md5($password)){
 			$this->session->set_userdata(array('status'=> 'Login sukses'));
 			redirect(base_url('welcome'));
 		}

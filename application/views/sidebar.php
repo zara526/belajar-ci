@@ -85,15 +85,9 @@
                 </a>
               </li>
 							<li class="nav-item">
-                <a href="<?php echo base_url('welcome/tampilanProd'); ?>" class="nav-link">
+                <a href="<?php echo base_url('welcome/index3'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('welcome/table'); ?>" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Table User</p>
                 </a>
               </li>
             </ul>
@@ -310,14 +304,32 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+						<li class="nav-item">
+                <a href="<?php echo base_url('welcome/table'); ?>" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Table User</p>
+                </a>
+              </li>
+							<li class="nav-item">
+                <a href="<?php  echo base_url('product/tampilanProd'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Product Tables</p>
+                </a>
+              </li>
+							<li class="nav-item">
+                <a href="<?php echo base_url('serverside/index'); ?>" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Other Product</p>
+                </a>
+              </li>
+							<li class="nav-item">
                 <a href="<?php  echo base_url('assets/pages/tables/simple.php'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Simple Tables</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php  echo base_url('assets/pages/tables/data.php'); ?>" class="nav-link">
+                <a href="<?php  echo base_url('assets/pages/tables/data.php'); ?>" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>DataTables</p>
                 </a>

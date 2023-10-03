@@ -4,15 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="app-url" content="<?= base_url('/')?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ayosh Company | Table Product</title>
-	<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/datatables/dataTables.bootstrap4.min.css')?>" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/datatables/buttons.bootstrap4.min.css')?>" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/datatables/responsive.bootstrap4.min.css')?>" rel="stylesheet" type="text/css" >
-	<link rel="stylesheet" href="<?php  echo base_url('')?>https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="<?php  echo base_url('')?>https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
-	<script src="<?= base_url('')?>https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="<?= base_url('')?>https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="<?= base_url('')?>https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')?>">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	
 	<style>
 		.btn-tambah, .btn-edit, .btn-hps{
@@ -173,14 +169,16 @@
 			 </section>
 			</div>
 
-<!--Datatable Responsive -->
-<script src="<?= base_url('')?>https://cdn.datatables.net/rowreorder/1.4.1/js/dataTables.rowReorder.min.js"></script>
-<script src="<?= base_url('')?>https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-<!-- jQuery -->
-<script src="<?php  echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
 <!-- Bootstrap 4 -->
-<script src="<?= base_url('')?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Datatables-->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php  echo base_url('assets/dist/js/adminlte.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->

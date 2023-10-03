@@ -2,10 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_Login extends CI_Model{
-	public function ambilogin($username, $password){
-		$this->db->where('username', $username);
-		$this->db->where('password', $password);
-		$query = $this->db->get('akun');
+	public function ambilogin($username){
+		$query = $this->db->get_where('user', ['username' => $username]);
 		if ($query->num_rows()>0){
 			// foreach ($query->result() as $row){
 			// 	$cek = array (
@@ -13,7 +11,7 @@ class M_Login extends CI_Model{
 			// 		'password' => $row->password
 			// 	);
 			// }
-			$query = $this->db->get('akun')->row_array();
+			$query = $this->db->get('user')->row_array();
 			$this->session->set_userdata('user_login',$query);
 			$this->session->set_flashdata('info', 'Login berhasil');
 			redirect(base_url('welcome/index'));
@@ -31,13 +29,13 @@ class M_Login extends CI_Model{
 			redirect(base_url('auth/register'));
 		}else{
 		$data = array(
-			'nama' => $this->input->POST('nama'),
+			'id' => $this->input->POST('id'),
+			'name' => $this->input->POST('name'),
 			'username' => $this->input->POST('username'),
-			'email' => $this->input->POST('email'),
-			'password' =>$password
+			'password' => md5($password)
 		);
 
-		$this->db->insert('akun', $data);
+		$this->db->insert('user', $data);
 		$this->session->set_flashdata('suc', 'Selamat akun Anda sudah terdaftar:) Silahkan Login');
 		redirect(base_url('auth/register'));
 	}

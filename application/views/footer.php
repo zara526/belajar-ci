@@ -26,6 +26,8 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?php  echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?> "></script>
+<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- ChartJS -->
 <script src="<?php  echo base_url('assets/plugins/chart.js/Chart.min.js'); ?> "></script>
 <!-- Sparkline -->

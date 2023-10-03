@@ -8,6 +8,7 @@ class M_user extends CI_Model{
 	}
 
 	function insertUser ($data){
+		$data['password'] = md5($data['password']);
 		$this->db->insert('user', $data);
 	}
 
@@ -17,10 +18,21 @@ class M_user extends CI_Model{
 		return $query->row();
 	}
 
-	function updateUser($id, $data){
+	function updateUser($id, $data, $password){
+		$hash_pw = md5($password);
+		
+		$this->db->trans_start();
+		
+		$this->db->where('id', $id);
+		$this->db->set('password', $hash_pw);
+		$this->db->update('user');
+
 		$this->db->where('id', $id);
 		$this->db->update('user', $data);
-		return $this->db->affected_rows();
+
+		$this->db->trans_complete();
+
+		return $this->db->trans_status();
 	}
 
 	function deleteUser($id){

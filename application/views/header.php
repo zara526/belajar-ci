@@ -10,7 +10,7 @@
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/fontawesome-free/css/all.min.css'); ?> ">
 		<!-- Ionicons -->
-		<link rel="stylesheet" href="/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<!-- Tempusdominus Bootstrap 4 -->
 		<link rel="stylesheet" href="<?php  echo base_url('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?> ">
 		<!-- iCheck -->
@@ -56,7 +56,7 @@
 				<a href="<?php  echo base_url('auth/login'); ?>" class="nav-link">Login</a>
 			</li>
 			 <li class="nav-item d-none d-sm-inline-block">
-				<a href="<?php  echo base_url('auth/logout'); ?>" class="nav-link">Logout</a>
+				<button style="border:none; background-color:white;" onclick="logout()" class="nav-link">Logout</button>
 			</li>
 		</ul>
 
@@ -183,7 +183,26 @@
 		</nav>
 			</div>
 			
+<script>
+	var base_url =href="<?php  echo base_url(); ?>"
+	function logout(){
+		Swal.fire({
+		title: 'Konfirmasi Logout',
+		text: 'Anda yakin ingin logout?',
+		icon: 'question',
+		showCancelButton: true,
+		confirmButtonText: 'Ya',
+		cancelButtonText: 'Tidak',
+		timer: 30000
+	}).then((result) => {
+		if (result.isConfirmed) {
+			window.location.href = base_url + 'auth/logout'; 
+    }
+	return false;
+});
 
+	}
+</script>
 
 
 </body>

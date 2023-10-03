@@ -99,19 +99,19 @@ class Serverside extends MY_Controller{
 		if($this->input->post('nama') == ''){
 			$data['inputerror'][] = 'nama';
 			$data['error_string'][] = 'Harap mengisi nama produk';
-			$daa['status'] = false;
+			$data['status'] = false;
 		}
 
 		if($this->input->post('harga') == ''){
 			$data['inputerror'][] = 'harga';
 			$data['error_string'][] = 'Harap mengisi harga produk';
-			$daa['status'] = false;
+			$data['status'] = false;
 		}
 
-		if($this->input->post('nama') == ''){
-			$data['inputerror'][] = 'nama';
+		if($this->input->post('stok') == ''){
+			$data['inputerror'][] = 'stok';
 			$data['error_string'][] = 'Harap mengisi stok produk';
-			$daa['status'] = false;
+			$data['status'] = false;
 		}
 
 		if($data['status'] == false){

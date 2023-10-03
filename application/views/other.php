@@ -17,7 +17,8 @@
 		<section class="content-header">
 			<div class="container-fluid">
 				<div class="row mb-2">
-					<h1 style="margin-left: 700px">Ajax Datatable</h1>
+				<a href="<?= base_url('welcome/index')?>"><i class=" fa fa-solid fa-arrow-left" style="margin:20px"></i></a>
+					<h1 style="margin-left: 730px; margin-top: 10px;">Ajax Datatable</h1>
 				</div>
 			</div>
 		</section>

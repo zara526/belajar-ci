@@ -8,7 +8,7 @@ $(document).ready(function(){
 			var kode_prod = $('#kode_prod').val();
 			var name_prod = $('#name_prod').val();
 			var harga = $('#harga').val();
-			var url =   base_url +'welcome/simpanprod'
+			var url =   base_url +'product/simpanprod'
 			var data ={ kode_prod: kode_prod, name_prod: name_prod, harga: harga};
 
 		$.ajax({
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		var kode_prod= $(this).attr('id');
 		$.ajax({
 			type: "POST",
-			url: base_url+'welcome/get_kodeprod',
+			url: base_url+'product/get_kodeprod',
 			data: {kode_prod:kode_prod},
 			dataType: "JSON",
 			success: function(data){
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		var kode_prod = modal_edit.find('#kode_prod').val();
 		var name_prod = modal_edit.find('#name_prod').val();
 		var harga = modal_edit.find('#harga').val();
-		var url = base_url +'welcome/ubahprod';
+		var url = base_url +'product/ubahprod';
 		var data = {kode_prod: kode_prod, name_prod: name_prod, harga: harga};
 		
 		$.ajax({
@@ -77,7 +77,7 @@ function hpsprod(kode_prod){
 	if(confirm('Anda yakin ingin menghapus produk ini?')){
 	$.ajax({
 		type: "POST",
-		url: base_url+'welcome/hpsprod',
+		url: base_url+'product/hpsprod',
 		data: {kode_prod:kode_prod},
 		dataType: "JSON",
 		success: function(response){
